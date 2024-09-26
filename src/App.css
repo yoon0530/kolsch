@@ -1,0 +1,50 @@
+.App {
+  text-align: center;
+}
+/*.App 클래스를 가진 HTML 요소의 텍스트 정렬을 중앙으로 설정
+이 스타일을 적용하면 해당 요소 내의 모든 텍스트가 수평 중앙에 정렬*/
+.App-logo {
+  height: 40vmin;
+  pointer-events: none; /*해당 요소에 대해 마우스 이벤트 비활성화*/
+}
+/*vmin(Viewpoint minimum): 뷰포트의 너비와 높이 중 더 작은 값의 1%를 기준으로 하는 단위
+vmin에 40을 곱해줌*/
+
+@media (prefers-reduced-motion: no-preference)  /*사용자가 별도의 설정을 하지 않은 경우 애니메이션 동작*/  {
+  .App-logo /*애니메이션이 적용될 HTML 요소를 지정*/  {
+    animation: App-logo-spin infinite 20s linear;
+    /*
+    App-logo-spin: 맨 아래에 있는 @keyframe 참조
+    infinite: 애니메이션 무한히 반복
+    20s: 애니매이션 한 번 완료되는데 걸리는 시간
+    linear: 애니메이션 속도 일정하게 유지
+    */
+  }
+}
+
+.App-header /*헤더 부분*/ {
+  background-color: #282c34;      /*헤더 배경*/
+  min-height: 100vh;              /*헤더 최소 높이*/
+  display: flex;                  /*Flexbox 레이아웃을 사용하여 자식 요소들을 배치*/
+  flex-direction: column;         /*자식 요소들을 세로 방향으로 배치 (기본적으로 Flexbox는 가로 방향으로 배치)*/
+  align-items: center;            /*세로 방향으로 자식 요소들을 중앙에 정렬*/
+  justify-content: center;        /*가로 방향으로 자식 요소들을 중앙에 정렬*/
+  font-size: calc(10px + 2vmin);  /*기본 10px에 2vmin을 더한 값을 사용하여 반응형 디자인이 가능해짐*/
+  color: white;                   /*텍스트 색상 white*/
+}
+
+.App-link {
+  color: #61dafb;
+}
+/*특정 요소의 텍스트 색상을 밝은 파란색으로 설정
+여담으로 이 색상은 React의 로고 색상과 유사하여 React 애플리케이션에서 자주 사용된다고 한다.*/
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+/*360도 회전하는 애니메이션*/
